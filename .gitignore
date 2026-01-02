@@ -1,0 +1,6 @@
+logs/*.log
+cache/*.json
+config/db.php
+.DS_Store
+Thumbs.db
+db/*
