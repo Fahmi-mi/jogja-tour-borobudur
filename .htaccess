@@ -1,0 +1,9 @@
+Options -Indexes
+
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff" Header set X-Frame-Options "DENY"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On ExpiresDefault "access plus 7 days"
+</IfModule>

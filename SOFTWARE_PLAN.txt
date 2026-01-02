@@ -1,0 +1,110 @@
+Jogja Tour Borobudur
+
+1. Problem Definition
+Tujuan: Memastikan software yang dibuat memang dibutuhkan.
+- Background
+   Jogja Tour Borobudur adalah usaha jasa tour yang melayani wisatawan dari dalam maupun luar daerah untuk berwisata di Yogyakarta dan Borobudur.
+   Saat ini, usaha ini membutuhkan media online berupa website company profile untuk memperkenalkan layanan, menampilkan dokumentasi, dan memudahkan calon pelanggan menghubungi serta memberikan testimoni.
+- User Persona
+   1. Calon wisatawan domestik maupun mancanegara yang ingin mencari informasi dan memesan paket tour di Jogja dan Borobudur.
+   2. Pelaku usaha tour yang ingin memperluas jangkauan pemasaran dan meningkatkan kepercayaan pelanggan melalui testimoni dan dokumentasi.
+- Problem Statement
+   Banyak calon pelanggan kesulitan menemukan informasi lengkap, harga, dan kontak Jogja Tour Borobudur secara online.
+   Selain itu, belum ada media resmi untuk menampilkan dokumentasi kegiatan tour dan testimoni pelanggan, sehingga kepercayaan dan engagement calon pelanggan berkurang.
+- Scope (In-Scope & Out-of-Scope)
+   In-Scope:
+   1. Website company profile dengan 4 halaman utama: Beranda, About, Contact, Testimoni
+   2. Fitur slider foto, video YouTube, form email, price list, form & tampilan testimoni
+   3. Navbar dan logo WhatsApp fixed, footer, flag counter pengunjung
+   Out-of-Scope: -
+
+
+2. Requirement Analysis
+Functional Requirements
+- Menampilkan halaman Beranda dengan ucapan selamat datang, slider foto, sekilas tentang Jogja dan Borobudur (teks & video YouTube), serta form kirim email.
+- Menampilkan halaman About berisi penjelasan usaha, price list paket tour, dan deskripsi destinasi.
+- Menampilkan halaman Testimoni yang berisi form kirim testimoni dan daftar 10 testimoni teratas.
+- Menampilkan halaman Contact berisi informasi kontak usaha dan form email.
+- Navbar fixed di atas, logo WhatsApp fixed di kanan bawah, footer dengan nama usaha, dan flag counter pengunjung.
+- Form testimoni dapat dikirim dan tersimpan (ke file/database) serta dapat ditampilkan kembali di halaman terkait.
+- Semua halaman dapat diakses dengan baik di perangkat mobile dan desktop (responsive).
+
+Non-Functional Requirements
+- Performance: Website harus cepat diakses, gambar dioptimasi, dan loading slider/video tidak mengganggu pengalaman pengguna.
+- Security: Proteksi form dari spam (captcha/sederhana), validasi input, dan sanitasi data sebelum disimpan.
+- Scalability: Struktur kode dan data memungkinkan penambahan fitur (misal: booking online) di masa depan.
+- Maintainability: Kode terstruktur (misal: pemisahan frontend-backend), mudah dipahami, dan terdokumentasi.
+
+
+3. System Design
+- Architecture
+Monolith
+- Tech Stack
+Frontend : HTML, CSS, JavaScript
+Backend : PHP
+Database Design
+   1. MySQL
+      CREATE TABLE testimoni (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          nama VARCHAR(100) NOT NULL,
+          pesan TEXT NOT NULL,
+          rating TINYINT UNSIGNED NOT NULL CHECK (rating BETWEEN 1 AND 5),
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+      -- Validasi rating juga harus dilakukan di backend PHP, karena CHECK constraint kadang tidak aktif di shared hosting.
+   2. File JSON (cache/testimoni.json) digunakan sebagai fallback jika terjadi kesalahan pada database
+API Design
+   1. POST (post_testimoni.php)
+      Request (JSON):
+      {
+         "nama": "string",
+         "pesan": "string",
+         "rating": 1-5
+      }
+      Response (JSON):
+      {
+         "success": true/false,
+         "message": "string"
+      }
+   2. GET (get_testimoni.php)
+      Response (JSON):
+      [
+         {
+            "nama": "string",
+            "pesan": "string",
+            "rating": 1-5
+         },
+         ...
+      ]
+   -- Response GET berupa array, bukan objek, agar lebih mudah diolah di frontend.
+
+
+4. Planning & Breakdown
+- Milestone
+  1. Perancangan & Setup Awal (3–5 hari)
+  2. Pengembangan Frontend (2 minggu)
+  3. Pengembangan Backend & API (1 minggu)
+  4. Integrasi & Testing (1 minggu)
+  5. Deployment & Dokumentasi (2–3 hari)
+  6. Maintenance & Iterasi (sisa waktu, fleksibel)
+- Estimasi waktu
+  Target selesai: 2 bulan (fleksibel, menyesuaikan waktu liburan)
+
+
+5. Implementation
+- Coding Standard  
+  Menggunakan standar penulisan kode yang konsisten (indentasi, penamaan variabel, komentar seperlunya).
+- Version Control  
+  Menggunakan Git untuk tracking perubahan kode dan backup.
+- Workflow  
+  Pengembangan dilakukan per fitur: mulai dari frontend, backend, lalu integrasi.
+- Tools  
+  Visual Studio Code sebagai editor, browser untuk testing, cPanel untuk deployment.
+- Dokumentasi  
+  Menulis dokumentasi singkat untuk struktur folder, cara deploy, dan penggunaan fitur utama.
+
+
+6. Maintenance & Iteration
+- Bug fixing (memperbaiki error yang muncul setelah deploy)
+- Feature improvement (menambah/memperbaiki fitur jika ada masukan)
+- Refactoring (merapikan kode jika diperlukan)
