@@ -1,9 +1,119 @@
+# ========== SECURITY ==========
 Options -Indexes
+Options -MultiViews
 
+# Prevent access to sensitive files
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+<FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op])|~)$">
+    Require all denied
+</FilesMatch>
+
+# Block access to config and logs
+<DirectoryMatch "/(config|logs|cache|db)/">
+    Require all denied
+</DirectoryMatch>
+
+# Security Headers
 <IfModule mod_headers.c>
-  Header set X-Content-Type-Options "nosniff" Header set X-Frame-Options "DENY"
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    
+    # Remove PHP version
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
 </IfModule>
 
+# ========== PERFORMANCE ==========
+# Compression
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Browser Caching
 <IfModule mod_expires.c>
-  ExpiresActive On ExpiresDefault "access plus 7 days"
+    ExpiresActive On
+    
+    # Images
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # CSS & JavaScript
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # HTML (short cache for dynamic content)
+    ExpiresByType text/html "access plus 1 hour"
+    
+    # Default
+    ExpiresDefault "access plus 1 week"
+</IfModule>
+
+# Cache-Control Headers
+<IfModule mod_headers.c>
+    # Images - cache for 1 year
+    <FilesMatch "\.(webp|jpg|jpeg|png|gif|ico|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # CSS & JS - cache for 1 month
+    <FilesMatch "\.(css|js)$">
+        Header set Cache-Control "public, max-age=2592000"
+    </FilesMatch>
+    
+    # HTML - short cache
+    <FilesMatch "\.(html|php)$">
+        Header set Cache-Control "public, max-age=3600, must-revalidate"
+    </FilesMatch>
+</IfModule>
+
+# ========== URL REWRITING ==========
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Force HTTPS (saat production)
+    # RewriteCond %{HTTPS} off
+    # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+    
+    # Remove .php extension
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME}\.php -f
+    RewriteRule ^(.*)$ $1.php [L]
+    
+    # Remove trailing slash
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [R=301,L]
+</IfModule>
+
+# ========== WEBP FALLBACK ==========
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Check if browser supports WebP
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    # Check if WebP version exists
+    RewriteCond %{REQUEST_FILENAME} (.*)\.(jpe?g|png)$
+    RewriteCond %1\.webp -f
+    # Serve WebP instead
+    RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+# ========== MIME TYPES ==========
+<IfModule mod_mime.c>
+    AddType image/webp .webp
+    AddType application/javascript .js
+    AddType text/css .css
 </IfModule>

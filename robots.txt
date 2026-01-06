@@ -1,0 +1,26 @@
+# robots.txt for Jogja Tour Borobudur
+
+User-agent: *
+Allow: /
+
+# Block access to private directories
+Disallow: /api/
+Disallow: /config/
+Disallow: /logs/
+Disallow: /cache/
+Disallow: /db/
+Disallow: /includes/
+
+# Block access to specific file types
+Disallow: /*.log$
+Disallow: /*.sql$
+Disallow: /*.json$
+
+# Allow access to assets
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://jogjatourborobudur.com/sitemap.xml
+
+# Crawl-delay (optional, untuk prevent overload)
+Crawl-delay: 10
