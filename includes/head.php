@@ -39,8 +39,9 @@ $page_keywords = $page_keywords ?? 'jogja tour, borobudur tour, tour yogyakarta,
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="manifest" href="assets/images/favicon/site.webmanifest">
     
-    <!-- Tailwind CSS (Local) -->
-    <link rel="stylesheet" href="assets/css/tailwind.css">
+    <!-- Tailwind CSS (CDN - Development Only) -->
+    <!-- TODO: Ganti ke local build saat production -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
