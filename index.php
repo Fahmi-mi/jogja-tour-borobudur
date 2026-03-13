@@ -10,17 +10,20 @@ include 'includes/header.php';
 <main class="relative bg-[url('assets/images/bg-parang.webp')] bg-fixed bg-cover min-h-screen">
     
     <!-- Hero Section with Slider -->
-    <section class="relative pt-20 pb-16">
+    <section class="relative pb-16">
         <div class="container mx-auto px-4 md:px-20">
             <!-- Welcome Text -->
-            <div class="text-center mb-10 bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
-                <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-                    Selamat Datang di Jogja Tour Borobudur
-                </h1>
-                <p class="text-lg md:text-xl text-gray-600">
-                    Jelajahi keindahan Yogyakarta dan Borobudur bersama kami
+            <section class="relative z-10 w-full h-screen">
+              <div class="flex flex-col justify-center h-full px-7 md:px-20 space-y-10">
+                <div class="space-y-4">
+                  <h1 class="text-2xl text-center md:text-4xl text-white font-medium">Welcome To</h1>
+                  <h1 class="text-5xl text-center md:text-7xl text-white font-extrabold">Jogja Tour Borobudur</h1>
+                </div>
+                <p class="text-sm text-center md:text-xl text-white font-medium max-w-4xl mx-auto">
+                  Experience the sacred harmony of Borobudur's ancient stones and lush landscapes. Find serenity in Indonesia's iconic wonder
                 </p>
-            </div>
+              </div>
+            </section>
 
             <!-- Image Slider -->
             <div id="imageSlider" class="relative w-full max-w-5xl mx-auto bg-white rounded-lg shadow-2xl overflow-hidden">

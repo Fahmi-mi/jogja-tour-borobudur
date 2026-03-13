@@ -20,25 +20,25 @@ if ($current_page == 'index') {
         <div class="space-x-5 text-sm md:text-base font-medium">
             <a 
                 href="index.php" 
-                class="hover:text-blue-600 transition-colors <?php echo ($current_page == 'beranda') ? 'text-blue-600 font-semibold' : ''; ?>"
+                class="text-black font-medium <?php echo ($current_page == 'beranda') ?>"
             >
                 Beranda
             </a>
             <a 
                 href="about.php" 
-                class="hover:text-blue-600 transition-colors <?php echo ($current_page == 'about') ? 'text-blue-600 font-semibold' : ''; ?>"
+                class="text-black font-medium <?php echo ($current_page == 'about') ?>"
             >
                 About
             </a>
             <a 
                 href="contact.php" 
-                class="hover:text-blue-600 transition-colors <?php echo ($current_page == 'contact') ? 'text-blue-600 font-semibold' : ''; ?>"
+                class="text-black font-medium <?php echo ($current_page == 'contact') ?>"
             >
                 Contact
             </a>
             <a 
                 href="testimoni.php" 
-                class="hover:text-blue-600 transition-colors <?php echo ($current_page == 'testimoni') ? 'text-blue-600 font-semibold' : ''; ?>"
+                class="text-black font-medium <?php echo ($current_page == 'testimoni') ?>"
             >
                 Testimoni
             </a>
