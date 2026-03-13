@@ -35,20 +35,20 @@ include 'includes/header.php';
           <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-white/80">Choose Service Category</p>
           <h2 class="text-3xl md:text-5xl font-bold">Packages to Suit Your Vacation Style</h2>
         </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm md:text-base">
-                    <a href="#transportasi" class="group relative overflow-hidden rounded-3xl border border-white/25 bg-white/15 backdrop-blur-md p-7 md:p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/20">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm md:text-base">
+                <a href="#transportasi" class="group relative overflow-hidden rounded-3xl border border-white/25 bg-white/15 backdrop-blur-md p-7 md:p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/20">
             <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/10 blur-2xl"></div>
             <!-- <p class="relative text-white/80 text-xs md:text-sm uppercase tracking-wide">Kategori 01</p> -->
             <h3 class="relative mt-2 text-2xl md:text-3xl font-bold text-white">Transportation Only</h3>
-                        <p class="relative mt-3 text-white/90 leading-relaxed">Focus on comfortable transportation services with well-maintained vehicles, professional drivers, and flexible schedules tailored to your travel needs.</p>
-                        <span class="relative inline-flex mt-5 text-white font-semibold">View Packages</span>
+            <p class="relative mt-3 text-white/90 leading-relaxed">Focus on comfortable transportation services with well-maintained vehicles, professional drivers, and flexible schedules tailored to your travel needs.</p>
+            <span class="relative inline-flex mt-5 text-white font-semibold">View Packages</span>
           </a>
-                    <a href="#transportasi-spot" class="group relative overflow-hidden rounded-3xl border border-white/25 bg-black/25 backdrop-blur-md p-7 md:p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-black/35">
+            <a href="#transportasi-spot" class="group relative overflow-hidden rounded-3xl border border-white/25 bg-black/25 backdrop-blur-md p-7 md:p-8 shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-black/35">
             <div class="absolute -left-8 -bottom-8 w-40 h-40 rounded-full bg-orange-300/20 blur-2xl"></div>
             <!-- <p class="relative text-white/80 text-xs md:text-sm uppercase tracking-wide">Kategori 02</p> -->
             <h3 class="relative mt-2 text-2xl md:text-3xl font-bold text-white">Transportation and Tourist Spot</h3>
-                        <p class="relative mt-3 text-white/90 leading-relaxed">A complete package combining transportation with selected tourist destinations such as city tours, Borobudur, and custom itineraries for families or groups.</p>
-                        <span class="relative inline-flex mt-5 text-white font-semibold">Explore Packages</span>
+            <p class="relative mt-3 text-white/90 leading-relaxed">A complete package combining transportation with selected tourist destinations such as city tours, Borobudur, and custom itineraries for families or groups.</p>
+            <span class="relative inline-flex mt-5 text-white font-semibold">Explore Packages</span>
           </a>
         </div>
       </div>
