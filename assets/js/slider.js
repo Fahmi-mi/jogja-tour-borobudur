@@ -24,8 +24,8 @@
 
     // Update dots
     dots.forEach((dot) => {
-      dot.classList.remove("bg-gray-800");
-      dot.classList.add("bg-gray-400");
+      dot.classList.remove("bg-white");
+      dot.classList.add("bg-white/40");
     });
 
     // Show current slide
@@ -34,8 +34,8 @@
 
     // Update current dot
     if (dots[index]) {
-      dots[index].classList.remove("bg-gray-400");
-      dots[index].classList.add("bg-gray-800");
+      dots[index].classList.remove("bg-white/40");
+      dots[index].classList.add("bg-white");
     }
 
     setTimeout(() => {

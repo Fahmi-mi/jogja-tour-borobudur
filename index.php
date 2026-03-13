@@ -1,5 +1,5 @@
 <?php
-$page_title = 'Beranda - Jogja Tour Borobudur';
+$page_title = 'Jogja Tour Borobudur';
 $page_description = 'Selamat datang di Jogja Tour Borobudur. Nikmati pengalaman wisata terbaik di Yogyakarta dan Borobudur dengan paket tour lengkap dan harga terjangkau.';
 $page_keywords = 'jogja tour, borobudur tour, wisata yogyakarta, paket tour jogja, travel borobudur';
 
@@ -7,7 +7,7 @@ include 'includes/head.php';
 include 'includes/header.php';
 ?>
 
-<main class="relative bg-[url('assets/images/bg-parang.webp')] bg-fixed bg-cover min-h-screen">
+<main class="relative page-bg-overlay bg-[url('assets/images/bg-parang.webp')] bg-fixed bg-cover min-h-screen">
     
     <!-- Hero Section with Slider -->
     <section class="relative pb-16">
@@ -26,7 +26,7 @@ include 'includes/header.php';
             </section>
 
             <!-- Image Slider -->
-            <div id="imageSlider" class="relative w-full max-w-5xl mx-auto bg-white rounded-lg shadow-2xl overflow-hidden">
+            <div id="imageSlider" class="relative w-full max-w-5xl mx-auto rounded-3xl border border-white/20 bg-white/10 backdrop-blur-sm shadow-2xl overflow-hidden">
                 <div class="relative h-[300px] md:h-[500px]">
                     <!-- Slider Images -->
                     <?php for ($i = 1; $i <= 25; $i++): ?>
@@ -39,25 +39,29 @@ include 'includes/header.php';
                         >
                     </div>
                     <?php endfor; ?>
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
                     
                     <!-- Navigation Buttons -->
-                    <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all">
+                    <button id="prevBtn" class="absolute left-3 md:left-4 top-1/2 -translate-y-1/2 bg-black/35 backdrop-blur-md hover:bg-black/55 text-white p-2.5 md:p-3 rounded-full border border-white/20 transition-all z-10">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                         </svg>
                     </button>
-                    <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all">
+                    <button id="nextBtn" class="absolute right-3 md:right-4 top-1/2 -translate-y-1/2 bg-black/35 backdrop-blur-md hover:bg-black/55 text-white p-2.5 md:p-3 rounded-full border border-white/20 transition-all z-10">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                         </svg>
                     </button>
-                </div>
 
-                <!-- Dots Indicator -->
-                <div id="dotsContainer" class="flex justify-center gap-2 py-4 bg-gray-100">
-                    <?php for ($i = 0; $i < 25; $i++): ?>
-                    <button class="dot w-2 h-2 rounded-full bg-gray-400 hover:bg-gray-600 transition-colors <?php echo $i === 0 ? 'bg-gray-800' : ''; ?>"></button>
-                    <?php endfor; ?>
+                    <!-- Dots Indicator -->
+                    <div class="absolute bottom-3 md:bottom-5 left-1/2 -translate-x-1/2 z-10 max-w-[calc(100%-2rem)] md:max-w-none">
+                        <div id="dotsContainer" class="flex items-center justify-center gap-1 md:gap-1.5 px-3 py-2 rounded-full bg-black/35 backdrop-blur-md border border-white/15 shadow-lg">
+                            <?php for ($i = 0; $i < 25; $i++): ?>
+                            <button class="dot shrink-0 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full bg-white/40 hover:bg-white/70 transition-colors <?php echo $i === 0 ? 'bg-white' : ''; ?>"></button>
+                            <?php endfor; ?>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -202,83 +206,6 @@ include 'includes/header.php';
                 experienced and understand the ins and outs of the Jogja area and its surroundings, cars in good condition and well maintained, the driver can speak English well, this meets the needs of
                 tourists from abroad
             </p>
-        </div>
-    </section>
-
-    <!-- Contact Form Section -->
-    <section class="py-16 px-5 md:px-20 bg-black/30 backdrop-blur-lg border-t border-b border-white/20">
-        <div class="bg-gradient-to-r from-gray-100 to-white p-6 md:p-8 rounded-lg shadow-xl max-w-4xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Contact Us</h2>
-            
-            <form id="contactForm" class="space-y-5">
-                <div>
-                    <label for="nama" class="block text-sm md:text-base font-medium text-gray-700 mb-2">
-                        Full Name <span class="text-red-500">*</span>
-                    </label>
-                    <input 
-                        type="text" 
-                        id="nama" 
-                        name="nama" 
-                        placeholder="Enter your full name" 
-                        required 
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    >
-                </div>
-
-                <div>
-                    <label for="email" class="block text-sm md:text-base font-medium text-gray-700 mb-2">
-                        Email <span class="text-red-500">*</span>
-                    </label>
-                    <input 
-                        type="email" 
-                        id="email" 
-                        name="email" 
-                        placeholder="contoh@email.com" 
-                        required 
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    >
-                </div>
-
-                <div>
-                    <label for="subjek" class="block text-sm md:text-base font-medium text-gray-700 mb-2">
-                        Subject <span class="text-red-500">*</span>
-                    </label>
-                    <input 
-                        type="text" 
-                        id="subjek" 
-                        name="subjek" 
-                        placeholder="Subject of your message" 
-                        required 
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    >
-                </div>
-
-                <div>
-                    <label for="pesan" class="block text-sm md:text-base font-medium text-gray-700 mb-2">
-                        Message <span class="text-red-500">*</span>
-                    </label>
-                    <textarea 
-                        id="pesan" 
-                        name="pesan" 
-                        placeholder="Write your message here..."
-                        rows="5"
-                        required
-                        class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
-                    ></textarea>
-                </div>
-
-                <button 
-                    type="submit" 
-                    id="submitBtn"
-                    class="w-full bg-black text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer"
-                >
-                    <span id="btnText">Send Message</span>
-                    <svg id="btnLoader" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                </button>
-            </form>
         </div>
     </section>
 

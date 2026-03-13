@@ -48,15 +48,8 @@
   function updateStars() {
     highlightStars(selectedRating);
 
-    const labels = [
-      "",
-      "Sangat Buruk",
-      "Buruk",
-      "Cukup",
-      "Bagus",
-      "Sangat Bagus",
-    ];
-    ratingText.textContent = labels[selectedRating] || "Pilih rating";
+    const labels = ["", "Very Poor", "Poor", "Fair", "Good", "Excellent"];
+    ratingText.textContent = labels[selectedRating] || "Choose rating";
   }
 
   // Validation function
@@ -68,8 +61,8 @@
     if (!nama || nama.length < 2) {
       Swal.fire({
         icon: "error",
-        title: "Nama Tidak Valid",
-        text: "Nama harus diisi minimal 2 karakter",
+        title: "Invalid Name",
+        text: "Name must contain at least 2 characters",
         confirmButtonColor: "#2563eb",
       });
       return false;
@@ -78,8 +71,8 @@
     if (!rating || rating < 1 || rating > 5) {
       Swal.fire({
         icon: "error",
-        title: "Rating Belum Dipilih",
-        text: "Silakan pilih rating dari 1-5 bintang",
+        title: "Rating Not Selected",
+        text: "Please choose a rating between 1 and 5 stars",
         confirmButtonColor: "#2563eb",
       });
       return false;
@@ -88,8 +81,8 @@
     if (!pesan || pesan.length < 10) {
       Swal.fire({
         icon: "error",
-        title: "Pesan Tidak Valid",
-        text: "Testimoni harus diisi minimal 10 karakter",
+        title: "Invalid Message",
+        text: "Testimonial must contain at least 10 characters",
         confirmButtonColor: "#2563eb",
       });
       return false;
@@ -116,7 +109,7 @@
 
       // Disable button and show loader
       submitBtn.disabled = true;
-      btnText.textContent = "Mengirim...";
+      btnText.textContent = "Sending...";
       btnLoader.classList.remove("hidden");
 
       try {
@@ -137,8 +130,8 @@
         if (result.success) {
           await Swal.fire({
             icon: "success",
-            title: "Berhasil!",
-            text: result.message || "Terima kasih atas testimoni Anda!",
+            title: "Success!",
+            text: result.message || "Thank you for your testimonial!",
             confirmButtonColor: "#10b981",
           });
 
@@ -153,8 +146,8 @@
         } else {
           Swal.fire({
             icon: "error",
-            title: "Gagal Mengirim",
-            text: result.message || "Terjadi kesalahan. Silakan coba lagi.",
+            title: "Submission Failed",
+            text: result.message || "An error occurred. Please try again.",
             confirmButtonColor: "#ef4444",
           });
         }
@@ -163,13 +156,13 @@
         Swal.fire({
           icon: "error",
           title: "Error",
-          text: "Terjadi kesalahan jaringan. Silakan coba lagi.",
+          text: "A network error occurred. Please try again.",
           confirmButtonColor: "#ef4444",
         });
       } finally {
         // Re-enable button and hide loader
         submitBtn.disabled = false;
-        btnText.textContent = "Kirim Testimoni";
+        btnText.textContent = "Submit Testimonial";
         btnLoader.classList.add("hidden");
       }
     });
@@ -218,7 +211,7 @@
   function createTestimonialCard(testimonial) {
     const card = document.createElement("div");
     card.className =
-      "bg-white/95 backdrop-blur-sm rounded-lg shadow-lg p-6 space-y-4 hover:shadow-xl transition-shadow";
+      "bg-white/15 backdrop-blur-xl border border-white/30 rounded-2xl shadow-lg p-6 space-y-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300";
 
     const stars = "⭐".repeat(testimonial.rating);
 
@@ -226,11 +219,11 @@
 
     card.innerHTML = `
             <div class="flex justify-between items-start">
-                <h3 class="font-bold text-lg text-gray-800">${escapeHtml(testimonial.nama)}</h3>
-                <span class="text-sm text-gray-500">${dateStr}</span>
+          <h3 class="font-bold text-lg text-white">${escapeHtml(testimonial.nama)}</h3>
+          <span class="text-sm text-white/70">${dateStr}</span>
             </div>
             <div class="text-yellow-500 text-xl">${stars}</div>
-            <p class="text-gray-700 leading-relaxed">${escapeHtml(testimonial.pesan)}</p>
+        <p class="text-white/90 leading-relaxed">${escapeHtml(testimonial.pesan)}</p>
         `;
 
     return card;
@@ -242,7 +235,7 @@
 
     const date = new Date(dateString);
     const options = { year: "numeric", month: "long", day: "numeric" };
-    return date.toLocaleDateString("id-ID", options);
+    return date.toLocaleDateString("en-US", options);
   }
 
   // Escape HTML to prevent XSS

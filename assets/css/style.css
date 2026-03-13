@@ -37,3 +37,22 @@
 .card-bg-tours {
   background-image: url("../images/bg-tours.webp") !important;
 }
+
+main.page-bg-overlay {
+  position: relative;
+  isolation: isolate;
+}
+
+main.page-bg-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.42);
+  pointer-events: none;
+  z-index: 0;
+}
+
+main.page-bg-overlay > * {
+  position: relative;
+  z-index: 1;
+}
