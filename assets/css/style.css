@@ -1,0 +1,39 @@
+.card-bg-hotel,
+.card-bg-destinasi,
+.card-bg-makanan,
+.card-bg-fasilitas,
+.card-bg-jarak,
+.card-bg-pickup,
+.card-bg-tours {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card-bg-hotel {
+  background-image: url("../images/bg-hotel.webp") !important;
+}
+
+.card-bg-destinasi {
+  background-image: url("../images/bg-destinasi.webp") !important;
+}
+
+.card-bg-makanan {
+  background-image: url("../images/bg-makanan.webp") !important;
+}
+
+.card-bg-fasilitas {
+  background-image: url("../images/bg-fasilitas.webp") !important;
+}
+
+.card-bg-jarak {
+  background-image: url("../images/bg-jarak.webp") !important;
+}
+
+.card-bg-pickup {
+  background-image: url("../images/bg-pickup.webp") !important;
+}
+
+.card-bg-tours {
+  background-image: url("../images/bg-tours.webp") !important;
+}

@@ -14,27 +14,27 @@ function validateInput($nama, $email, $subjek, $pesan) {
     $errors = [];
     
     if (empty(trim($nama))) {
-        $errors[] = 'Nama tidak boleh kosong';
+        $errors[] = 'Full name cannot be empty';
     } elseif (strlen($nama) > 100) {
-        $errors[] = 'Nama maksimal 100 karakter';
+        $errors[] = 'Full name cannot exceed 100 characters';
     }
     
     if (empty(trim($email))) {
-        $errors[] = 'Email tidak boleh kosong';
+        $errors[] = 'Email cannot be empty';
     } elseif (!validateEmail($email)) {
-        $errors[] = 'Format email tidak valid';
+        $errors[] = 'Invalid email format';
     }
     
     if (empty(trim($subjek))) {
-        $errors[] = 'Subjek tidak boleh kosong';
+        $errors[] = 'Subject cannot be empty';
     } elseif (strlen($subjek) > 200) {
-        $errors[] = 'Subjek maksimal 200 karakter';
+        $errors[] = 'Subject cannot exceed 200 characters';
     }
     
     if (empty(trim($pesan))) {
-        $errors[] = 'Pesan tidak boleh kosong';
+        $errors[] = 'Message cannot be empty';
     } elseif (strlen($pesan) > 2000) {
-        $errors[] = 'Pesan maksimal 2000 karakter';
+        $errors[] = 'Message cannot exceed 2000 characters';
     }
     
     return $errors;
@@ -94,7 +94,7 @@ try {
         http_response_code(429);
         echo json_encode([
             'success' => false,
-            'message' => 'Terlalu banyak submission. Silakan coba lagi nanti.'
+            'message' => 'Too many submissions. Please try again later.'
         ]);
         exit;
     }
@@ -127,7 +127,7 @@ try {
         http_response_code(200);
         echo json_encode([
             'success' => true,
-            'message' => 'Email berhasil dikirim. Kami akan segera menghubungi Anda!'
+            'message' => 'Email successfully sent. We will contact you soon!'
         ]);
     } else {
         $fallbackFile = __DIR__ . '/../logs/email_fallback.log';
@@ -140,7 +140,7 @@ try {
         ], JSON_PRETTY_PRINT) . "\n\n";
         file_put_contents($fallbackFile, $fallbackData, FILE_APPEND);
         
-        throw new Exception('Gagal mengirim email');
+        throw new Exception('Failed to send email');
     }
     
 } catch (Exception $e) {
@@ -149,6 +149,6 @@ try {
     http_response_code(500);
     echo json_encode([
         'success' => false,
-        'message' => 'Terjadi kesalahan saat mengirim email. Silakan coba lagi atau hubungi kami via WhatsApp.'
+        'message' => 'An error occurred while sending the email. Please try again or contact us via WhatsApp.'
     ]);
 }

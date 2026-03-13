@@ -63,104 +63,163 @@ include 'includes/header.php';
         </div>
     </section>
 
-    <!-- About Jogja & Borobudur Section -->
-    <section class="py-16 px-5 md:px-20">
-        <div class="max-w-6xl mx-auto bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-lg">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-gray-800">
-                Tentang Yogyakarta & Borobudur
-            </h2>
-            
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Yogyakarta -->
-                <div class="space-y-4">
-                    <h3 class="text-2xl font-bold text-gray-800">Yogyakarta</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Yogyakarta adalah kota istimewa yang kaya akan budaya, sejarah, dan keindahan alam. 
-                        Dari Keraton yang megah hingga pantai-pantai yang memukau, Yogyakarta menawarkan 
-                        pengalaman wisata yang tak terlupakan. Kota ini juga dikenal sebagai pusat pendidikan 
-                        dan seni budaya Jawa yang masih terjaga hingga saat ini.
-                    </p>
-                    
-                    <!-- Video Yogyakarta -->
-                    <div class="relative pt-[56.25%] bg-gray-200 rounded-lg overflow-hidden shadow-md">
+    <!-- A Glance of Jogja -->
+    <section class="relative z-10 py-16 px-5 md:px-20">
+        <div class="space-y-6 md:space-y-6">
+            <h2 class="text-2xl md:text-5xl text-white font-bold text-center">A Glance of Jogja</h2>
+            <div class="flex flex-col justify-center items-center bg-black/30 backdrop-blur-xl border border-white/20 shadow-lg p-6 md:py-12 rounded-3xl max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg p-5 w-full max-w-3xl">
+                    <div class="relative aspect-video">
                         <div id="video1Container" class="absolute inset-0 cursor-pointer group">
-                            <img 
-                                id="thumbnail1" 
-                                src="https://img.youtube.com/vi/1V_4-f5Ocy4/hqdefault.jpg" 
-                                alt="Video Yogyakarta"
-                                class="w-full h-full object-cover"
+                            <img
+                                id="thumbnail1"
+                                src="https://img.youtube.com/vi/1V_4-f5Ocy4/hqdefault.jpg"
+                                alt="Borobudur Temple Video Thumbnail"
+                                class="w-full h-full object-cover rounded-md"
+                                loading="lazy"
                             >
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-all">
-                                <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/40 transition-all">
+                                <svg class="w-16 h-16 text-white opacity-80 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M8 5v14l11-7z"/>
                                 </svg>
                             </div>
                         </div>
-                        <iframe 
-                            id="iframe1" 
-                            class="absolute inset-0 w-full h-full hidden" 
-                            src="" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        <iframe
+                            id="iframe1"
+                            class="absolute top-0 left-0 w-full h-full rounded-md hidden"
+                            src=""
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            loading="lazy"
                             allowfullscreen
                         ></iframe>
                     </div>
                 </div>
+                <p class="text-xs md:text-base text-white text-justify mt-8 max-w-5xl drop-shadow-2xl">
+                    Jogja as tourist destination has many special features. The Cosmological Axis of Yogyakarta that is acknowledge by UNESCO is an inseperable of the Javanese cosmological concept that sees
+                    life relating to Mount Merapi, Sultan's Palace, Krapyak Platform, and Indonesian ocean. Various tourist attraction and the friendliness of the people of Jogja make Jogja a favourite tour
+                    destination in Indonesia for domestic and foreign visitors.
+                </p>
+            </div>
+        </div>
+    </section>
 
-                <!-- Borobudur -->
-                <div class="space-y-4">
-                    <h3 class="text-2xl font-bold text-gray-800">Candi Borobudur</h3>
-                    <p class="text-gray-700 leading-relaxed">
-                        Candi Borobudur adalah warisan dunia UNESCO dan merupakan candi Buddha terbesar di dunia. 
-                        Dibangun pada abad ke-9, candi ini memiliki arsitektur yang menakjubkan dengan lebih dari 
-                        2.000 panel relief dan 504 arca Buddha. Keindahan sunrise di Borobudur menjadi momen 
-                        spiritual yang tak terlupakan bagi setiap pengunjung.
-                    </p>
-                    
-                    <!-- Video Borobudur -->
-                    <div class="relative pt-[56.25%] bg-gray-200 rounded-lg overflow-hidden shadow-md">
+    <!-- A Glance of Borobudur Temple -->
+    <section class="relative z-10 py-16 px-5 md:px-20">
+        <div class="space-y-6 md:space-y-6">
+            <h2 class="text-2xl md:text-5xl text-white font-bold text-center">A Glance of Borobudur Temple</h2>
+            <div class="flex flex-col justify-center items-center bg-black/30 backdrop-blur-xl border border-white/20 shadow-lg p-6 md:py-12 rounded-3xl max-w-6xl mx-auto">
+                <div class="bg-white rounded-lg p-5 w-full max-w-3xl">
+                    <div class="relative aspect-video">
                         <div id="video2Container" class="absolute inset-0 cursor-pointer group">
-                            <img 
-                                id="thumbnail2" 
-                                src="https://img.youtube.com/vi/lIZeZMbUG6s/hqdefault.jpg" 
-                                alt="Video Borobudur"
-                                class="w-full h-full object-cover"
+                            <img
+                                id="thumbnail2"
+                                src="https://img.youtube.com/vi/lIZeZMbUG6s/hqdefault.jpg"
+                                alt="Borobudur Temple Video Thumbnail"
+                                class="w-full h-full object-cover rounded-md"
+                                loading="lazy"
                             >
-                            <div class="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-all">
-                                <svg class="w-20 h-20 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
+                            <div class="absolute inset-0 flex items-center justify-center bg-black/25 group-hover:bg-black/40 transition-all">
+                                <svg class="w-16 h-16 text-white opacity-80 group-hover:opacity-100 transition-opacity" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
                                 </svg>
                             </div>
                         </div>
-                        <iframe 
-                            id="iframe2" 
-                            class="absolute inset-0 w-full h-full hidden" 
-                            src="" 
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        <iframe
+                            id="iframe2"
+                            class="absolute top-0 left-0 w-full h-full rounded-md hidden"
+                            src=""
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            loading="lazy"
                             allowfullscreen
                         ></iframe>
                     </div>
+                </div>
+                <p class="text-xs md:text-base text-white text-justify mt-8 max-w-5xl drop-shadow-2xl">
+                    Borobudur Temple is the largest Buddhist temple in the world. Located in Magelang, Central Java, Indonesia, It is a holy place to respect Buddha and a destination for pilgrim to get
+                    enlightment and wisdom based on Buddhism. The name of Borobudur was possibly introduced by Raffles based on the name of Boro, the nearest village from this monument.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-16 px-3 md:px-20 space-y-6 md:space-y-6">
+        <h2 class="text-2xl md:text-5xl text-white font-bold text-center">Why Jogja and Borobudur?</h2>
+        <div class="flex flex-col p-10 space-y-8 max-w-6xl mx-auto text-xs md:text-base bg-black/30 backdrop-blur-xl border rounded-xl">
+            <div class="relative card-bg-hotel bg-center bg-cover p-6 py-2 md:p-10 rounded-lg shadow-lg border-[10px] md:border-[17px]">
+                <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                <p class="relative mt-2 font-extrabold text-lg md:text-4xl uppercase text-center text-white">More choices of hotels or lodging</p>
+            </div>
+            <div class="relative card-bg-destinasi bg-center bg-cover p-6 py-2 md:p-10 rounded-lg shadow-lg border-[10px] md:border-[17px]">
+                <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                <p class="relative mt-2 font-extrabold text-lg md:text-4xl uppercase text-center text-white">More varied other tourist destinations</p>
+            </div>
+            <div class="relative card-bg-makanan bg-center bg-cover p-6 py-2 md:p-10 rounded-lg shadow-lg border-[10px] md:border-[17px]">
+                <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                <p class="relative mt-2 font-extrabold text-lg md:text-4xl uppercase text-center text-white">More tempting variety of food or cuisine</p>
+            </div>
+            <div class="relative card-bg-fasilitas bg-center bg-cover p-6 py-2 md:p-10 rounded-lg shadow-lg border-[10px] md:border-[17px]">
+                <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                <p class="relative mt-2 font-extrabold text-lg md:text-4xl uppercase text-center text-white">Better supporting tourist facilities</p>
+            </div>
+            <div class="relative card-bg-jarak bg-center bg-cover p-6 py-2 md:p-10 rounded-lg shadow-lg border-[10px] md:border-[17px]">
+                <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                <p class="relative mt-2 font-extrabold text-lg md:text-4xl uppercase text-center text-white">The distance traveled is not far from Jogja</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="relative z-10 py-16 px-5 md:px-20 space-y-6 md:space-y-6">
+        <h2 class="text-2xl md:text-5xl text-white font-bold text-center">Our Services</h2>
+        <div class="flex flex-col space-y-8 max-w-6xl bg-black/30 backdrop-blur-lg border shadow-lg p-6 md:py-8 rounded-3xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-xs md:text-base auto-rows-fr">
+                <div class="relative card-bg-pickup bg-center bg-cover p-6 md:p-10 rounded-lg shadow flex items-center justify-center border-[10px] md:border-[17px]">
+                    <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                    <p class="relative mt-2 font-extrabold text-lg md:text-2xl uppercase text-center text-white">Pick up, from Yogyakarta International Airport</p>
+                </div>
+                <div class="relative card-bg-tours bg-center bg-cover p-6 md:p-10 rounded-lg shadow flex items-center justify-center border-[10px] md:border-[17px]">
+                    <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                    <p class="relative mt-2 font-extrabold text-lg md:text-2xl uppercase text-center text-white">Tours, tourist trips</p>
+                </div>
+                <div class="relative card-bg-pickup bg-center bg-cover p-6 md:p-10 rounded-lg shadow flex items-center justify-center border-[10px] md:border-[17px]">
+                    <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                    <p class="relative mt-2 font-extrabold text-lg md:text-2xl uppercase text-center text-white">Drop off, to Yogyakarta International Airport</p>
+                </div>
+                <div class="relative card-bg-tours bg-center bg-cover p-6 md:p-10 rounded-lg shadow flex items-center justify-center border-[10px] md:border-[17px]">
+                    <div class="absolute inset-0 backdrop-blur-[1px] bg-black/30"></div>
+                    <p class="relative mt-2 font-extrabold text-lg md:text-2xl uppercase text-center text-white">Overland, a delivery trip outside the city of Yogyakarta</p>
                 </div>
             </div>
+            <p class="text-xs text-white md:text-base text-justify">
+                With the reasons above, if you are traveling in Jogja it would be better to combine a visit to Borobudur Temple. Also considering that tourists who go to tourist attractions in Jogja and
+                its surroundings have minimal public transportation, resulting in less effective time, so that it can be more effective, it can be overcome with a private car with a rental system or a
+                one-way tour package. So on this occasion, we offer a tour service package in the Jogja area, Borobudur Temple and its surroundings, which has been supported by reliable drivers who are
+                experienced and understand the ins and outs of the Jogja area and its surroundings, cars in good condition and well maintained, the driver can speak English well, this meets the needs of
+                tourists from abroad
+            </p>
         </div>
     </section>
 
     <!-- Contact Form Section -->
     <section class="py-16 px-5 md:px-20 bg-black/30 backdrop-blur-lg border-t border-b border-white/20">
         <div class="bg-gradient-to-r from-gray-100 to-white p-6 md:p-8 rounded-lg shadow-xl max-w-4xl mx-auto">
-            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Hubungi Kami</h2>
+            <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Contact Us</h2>
             
             <form id="contactForm" class="space-y-5">
                 <div>
                     <label for="nama" class="block text-sm md:text-base font-medium text-gray-700 mb-2">
-                        Nama Lengkap <span class="text-red-500">*</span>
+                        Full Name <span class="text-red-500">*</span>
                     </label>
                     <input 
                         type="text" 
                         id="nama" 
                         name="nama" 
-                        placeholder="Masukkan nama Anda" 
+                        placeholder="Enter your full name" 
                         required 
                         class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     >
@@ -182,13 +241,13 @@ include 'includes/header.php';
 
                 <div>
                     <label for="subjek" class="block text-sm md:text-base font-medium text-gray-700 mb-2">
-                        Subjek <span class="text-red-500">*</span>
+                        Subject <span class="text-red-500">*</span>
                     </label>
                     <input 
                         type="text" 
                         id="subjek" 
                         name="subjek" 
-                        placeholder="Subjek pesan" 
+                        placeholder="Subject of your message" 
                         required 
                         class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
                     >
@@ -196,14 +255,14 @@ include 'includes/header.php';
 
                 <div>
                     <label for="pesan" class="block text-sm md:text-base font-medium text-gray-700 mb-2">
-                        Pesan <span class="text-red-500">*</span>
+                        Message <span class="text-red-500">*</span>
                     </label>
                     <textarea 
                         id="pesan" 
                         name="pesan" 
-                        placeholder="Tulis pesan Anda di sini..."
+                        placeholder="Write your message here..."
                         rows="5"
-                        required 
+                        required
                         class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
                     ></textarea>
                 </div>
@@ -211,9 +270,9 @@ include 'includes/header.php';
                 <button 
                     type="submit" 
                     id="submitBtn"
-                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2"
+                    class="w-full bg-black text-white font-medium py-3 px-6 rounded-lg transition-colors duration-300 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                    <span id="btnText">Kirim Pesan</span>
+                    <span id="btnText">Send Message</span>
                     <svg id="btnLoader" class="hidden w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
@@ -235,6 +294,7 @@ include 'includes/whatsapp-button.php';
 
 <!-- Custom Scripts -->
 <script src="assets/js/slider.js"></script>
+<script src="assets/js/main.js"></script>
 <script src="assets/js/email-form.js"></script>
 
 </body>

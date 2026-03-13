@@ -22,7 +22,7 @@ if ($current_page == 'index') {
                 href="index.php" 
                 class="text-black font-medium <?php echo ($current_page == 'beranda') ?>"
             >
-                Beranda
+                Home
             </a>
             <a 
                 href="about.php" 
