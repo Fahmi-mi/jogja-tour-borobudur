@@ -39,11 +39,11 @@ include 'includes/header.php';
                     <div class="space-y-2">
                         <p>
                             <span class="text-white/75">WhatsApp:</span>
-                            <a href="https://wa.me/6281327470390" target="_blank" rel="noopener noreferrer" class="ml-1 text-white font-medium underline underline-offset-4 hover:text-sky-200">+62 813 2747 0390</a>
+                            <span class="ml-1 text-white font-medium hover:text-sky-200">+62 813 2747 0390</span>
                         </p>
                         <p>
                             <span class="text-white/75">Email:</span>
-                            <a href="mailto:agung1jogjadriver@gmail.com" class="ml-1 text-white font-medium underline underline-offset-4 hover:text-sky-200">agung1jogjadriver@gmail.com</a>
+                            <span class="ml-1 text-white font-medium hover:text-sky-200">agung1jogjadriver@gmail.com</span>
                         </p>
                     </div>
                 </div>
@@ -67,7 +67,7 @@ include 'includes/header.php';
             <p class="uppercase tracking-[0.2em] text-xs md:text-sm text-white/80">Stay Connected</p>
             <h2 class="text-3xl md:text-4xl font-bold">Reach Us Through Our Digital Channels</h2>
         </div>
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
             <!-- WhatsApp -->
             <div class="bg-white/15 backdrop-blur-xl p-6 rounded-2xl border border-white/30 shadow-lg text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/20">
                 <p class="text-xs uppercase tracking-[0.2em] text-white/80 mb-3">WhatsApp</p>
@@ -85,16 +85,6 @@ include 'includes/header.php';
                 <p class="text-white/75 text-sm mb-4">Send your travel questions or custom tour requests by email.</p>
                 <a href="<?php echo EMAIL_URL; ?>" class="text-white font-medium hover:underline break-all">
                     <?php echo COMPANY_EMAIL; ?>
-                </a>
-            </div>
-
-            <!-- Facebook -->
-            <div class="bg-white/15 backdrop-blur-xl p-6 rounded-2xl border border-white/30 shadow-lg text-center transition-all duration-300 hover:-translate-y-1 hover:bg-white/20">
-                <p class="text-xs uppercase tracking-[0.2em] text-white/80 mb-3">Facebook</p>
-                <h3 class="font-semibold text-white mb-2">Latest Updates</h3>
-                <p class="text-white/75 text-sm mb-4">Follow our page for travel updates, offers, and customer stories.</p>
-                <a href="<?php echo FACEBOOK_URL; ?>" target="_blank" rel="noopener noreferrer" class="text-white font-medium hover:underline">
-                    Visit Facebook
                 </a>
             </div>
 
